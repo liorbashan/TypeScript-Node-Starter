@@ -20,12 +20,15 @@ import * as contactController from "./controllers/contact";
 
 // API keys and Passport configuration
 import * as passportConfig from "./config/passport";
+import { DatabaseService } from './database';
+import { Pool } from 'mysql';
 
 // Create Express server
 const app = express();
 
 // Connect to MySQL
-
+const myDb: Pool = DatabaseService.getInstance();
+const result = myDb.query('ddd');
 
 // Express configuration
 app.set("port", process.env.PORT || 3000);
